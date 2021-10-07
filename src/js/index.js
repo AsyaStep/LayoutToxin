@@ -1,0 +1,1 @@
+import '../layout/ui-kit/colors-type/colors-type.scss';
