@@ -26,12 +26,20 @@ module.exports = {
                     { loader: "css-loader" } ,
                     { loader: "sass-loader" }
                 ]        
-            }
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
         ]
     },    
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/pug/template.pug'), 
+            template: path.resolve(__dirname, './src/layout/ui-kit/colors-type/colors-type.pug'), 
             filename: 'index.html',
         }),        
         new webpack.HotModuleReplacementPlugin(),
