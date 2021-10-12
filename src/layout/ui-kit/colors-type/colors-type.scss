@@ -1,8 +1,76 @@
-@import '../../../assets/scss/utils/variables.scss';
+@import "../../../assets/scss/utils/variables.scss";
 
-.template-color{
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
-    background-color: $dark-shade-100;
+body {
+   width: 1440px;
+   height: 900px;
+}
+
+.colors-bar {
+   width: 281.26px;
+   height: 610px;
+   margin-top: 145px;
+   margin-left: 149.74px;
+}
+
+.colors-block {
+   display: flex;
+   justify-content: space-between;   
+   margin-bottom: 20px;
+
+   :last-child {
+      margin-bottom: 0;
+   }
+}
+
+.template-color {
+   width: 70px;
+   height: 70px;
+   border-radius: 6px;
+}
+
+.dark-shade-100 {
+   background-color: $dark-shade-100;
+}
+
+.dark-shade-75 {
+   background-color: $dark-shade-75;
+}
+
+.dark-shade-50 {
+   background-color: $dark-shade-50;
+}
+
+.dark-shade-25 {
+   background-color: $dark-shade-25;
+}
+
+.dark-shade-5 {
+   background-color: $dark-shade-5;
+}
+
+.purple {
+   background-color: $purple;
+}
+
+.green {
+   background-color: $green;
+}
+
+.description-color {
+   width: 171px;
+   height: 56px;
+
+   h2,
+   p {
+      font-size: 19px;
+      line-height: 27, 79px;
+      margin: 0;
+   }
+
+   h2{     
+      font-family: 'Montserrat-Bold';
+   }
+   p{     
+      font-family: 'Montserrat-Regular';
+   }
 }
