@@ -1,7 +1,26 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    title="UI KIT"
-  body
-    .template-color  
+extends ../../../pug/template
+
+block varibles
+  -let title = 'Ui Kit Colors & Types'
+  -
+    let colorType = [
+      {classColor: 'dark-shade-100', nameColor: 'Dark shadow 100%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-75', nameColor: 'Dark shadow 75%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-50', nameColor: 'Dark shadow 50%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-25', nameColor: 'Dark shadow 25%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-5', nameColor: 'Dark shadow 5%', htmlColor: '#1F2041'},
+      {classColor: 'purple', nameColor: 'Purple', htmlColor: '#BC9CFF'},
+      {classColor: 'green', nameColor: 'Green', htmlColor: '#6FCF97'},      
+      ]
+
+mixin colorsBlock(color)
+    .colors-block
+      .template-color(class=attributes.class)
+      .description-color
+        h2= color.nameColor 
+        p= color.htmlColor
+
+block content      
+  .colors-bar  
+    for color in colorType  
+      +colorsBlock(color)(class=color.classColor)
