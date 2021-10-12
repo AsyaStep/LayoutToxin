@@ -1,5 +1,6 @@
 const path= require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } =require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -9,8 +10,9 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].bundle.js'
-    },
+        filename: '[name].[contenthash].bundle.js',
+        },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -42,7 +44,9 @@ module.exports = {
             template: path.resolve(__dirname, './src/layout/ui-kit/colors-type/colors-type.pug'), 
             filename: 'index.html',
         }),        
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),        
+        new webpack.SourceMapDevToolPlugin(),
+        new CleanWebpackPlugin(),
     ]      
     
 }
