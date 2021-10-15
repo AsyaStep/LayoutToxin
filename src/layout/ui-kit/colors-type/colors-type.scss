@@ -1,20 +1,26 @@
 @import "../../../assets/scss/utils/variables.scss";
+@import "../../../assets/scss/utils/fonts.scss";
+@import "../../../assets/scss/main.scss";
+@import "../../../assets/scss/utils/mixins.scss";
 
 body {
+   margin: 0;
    width: 1440px;
    height: 900px;
 }
 
 .colors-bar {
-   width: 281.26px;
+   position: absolute;
+   width: 281px;
    height: 610px;
-   margin-top: 145px;
-   margin-left: 149.74px;
+   top: 145px;
+   left: 150px;
 }
 
 .colors-block {
+   margin: 0 auto;
    display: flex;
-   justify-content: space-between;   
+   grid-template-columns: 2;
    margin-bottom: 20px;
 
    :last-child {
@@ -57,20 +63,96 @@ body {
 }
 
 .description-color {
-   width: 171px;
-   height: 56px;
+   margin-left: 40px;
+   align-self: center;
 
-   h2,
-   p {
+   h2, p {
       font-size: 19px;
-      line-height: 27, 79px;
+      line-height: 27.79px;
       margin: 0;
    }
 
-   h2{     
+   h2 {
       font-family: 'Montserrat-Bold';
    }
-   p{     
+
+   p {
       font-family: 'Montserrat-Regular';
    }
+}
+
+.template-fonts {
+   position: absolute;
+   width: 436px;
+   height: 321px;
+   top: 145px;
+   left: 846px;
+
+   display: grid;
+   grid-template-columns: 37px 1fr;
+}
+
+.name-section {
+   width: 36px;
+   height: 297px;
+   display: flex;
+   flex-direction: column;
+
+   font-family: 'Montserrat-Regular';
+   color: $dark-shade-25;
+
+   :first-child {
+      margin: 0;
+      @include fontH1();
+   }
+
+   :nth-child(2) {
+      margin-top: 80px;
+      @include fontH2();
+   }
+
+   :nth-child(3) {
+      margin-top: 74px;
+      @include fontH3();
+   }
+
+   :last-child {
+      margin-top: 50px;
+      @include fontBody();
+   }
+
+   .title {
+      align-self: flex-end;
+      margin-bottom: 0;
+   }
+}
+
+.description-section {
+   margin-bottom: 0;
+   margin-left: 29px;
+   font-family: 'Montserrat-Bold';
+
+   :first-child {
+      margin: 0;
+      @include fontH1();
+   }
+
+   :nth-child(2) {
+      margin-top: 53px;
+      @include fontH2();
+   }
+
+   :nth-child(3) {
+      margin-top: 52px;
+      @include fontH3();
+      text-transform: uppercase;
+   }
+
+   :last-child {
+      width: 301px;
+      margin-top: 50px;
+      @include fontBody();
+      font-family: 'Montserrat-Regular';
+   }
+
 }

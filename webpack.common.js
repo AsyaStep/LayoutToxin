@@ -6,7 +6,6 @@ const webpack = require('webpack')
 module.exports = {
     entry: {
         main: path.resolve(__dirname,'./src/js/index.js'),
-        hot: 'webpack/hot/dev-server.js',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -43,8 +42,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/layout/ui-kit/colors-type/colors-type.pug'), 
             filename: 'index.html',
-        }),        
-        new webpack.HotModuleReplacementPlugin(),        
+        }),       
         new webpack.SourceMapDevToolPlugin(),
         new CleanWebpackPlugin(),
     ]      
