@@ -4,21 +4,14 @@ block varibles
   -let title = 'Ui Kit Colors & Types'
   -
     let colorType = [
-      {classColor: 'dark-shade-100', nameColor: 'Dark Shade 100%', htmlColor: '#1F2041'},
-      {classColor: 'dark-shade-75', nameColor: 'Dark Shade 75%', htmlColor: '#1F2041'},
-      {classColor: 'dark-shade-50', nameColor: 'Dark Shade 50%', htmlColor: '#1F2041'},
-      {classColor: 'dark-shade-25', nameColor: 'Dark Shade 25%', htmlColor: '#1F2041'},
-      {classColor: 'dark-shade-5', nameColor: 'Dark Shade 5%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-100', nameColor: 'Dark shadow 100%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-75', nameColor: 'Dark shadow 75%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-50', nameColor: 'Dark shadow 50%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-25', nameColor: 'Dark shadow 25%', htmlColor: '#1F2041'},
+      {classColor: 'dark-shade-5', nameColor: 'Dark shadow 5%', htmlColor: '#1F2041'},
       {classColor: 'purple', nameColor: 'Purple', htmlColor: '#BC9CFF'},
       {classColor: 'green', nameColor: 'Green', htmlColor: '#6FCF97'},      
       ]
-  -
-    let fontType = [
-      {nameSection: 'H1', descSection: 'This one is the sub-section or widget title'},
-      {nameSection: 'H2', descSection: 'Next one is the item title inside widgets'},
-      {nameSection: 'H3', descSection: 'This is a label or CTA text'},
-      {nameSection: 'Body', descSection: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'},
-    ]    
 
 mixin colorsBlock(color)
     .colors-block
@@ -27,22 +20,7 @@ mixin colorsBlock(color)
         h2= color.nameColor 
         p= color.htmlColor
 
-mixin nameSectionBlock(font)
-  p(class=attributes.class)= font.nameSection
-
-mixin descSectionBlock(font)
-  p= font.descSection          
-
-block content
-  .logo-page   
+block content      
   .colors-bar  
     for color in colorType  
-      +colorsBlock(color)(class=color.classColor)  
-  .template-fonts
-    .name-section
-      for font in fontType
-        +nameSectionBlock(font)(class='title')
-    .description-section
-      for font in fontType 
-        +descSectionBlock(font)
-
+      +colorsBlock(color)(class=color.classColor)
