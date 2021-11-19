@@ -1,0 +1,6 @@
+mixin field-text(inputs)
+  .field-text
+    if inputs
+      each input in inputs
+        label.field-text__title #{input.label}
+        input.field-text__input( type=input.type, placeholder=input.placeholder, data-inputmask=input["data-inputmask"])         
