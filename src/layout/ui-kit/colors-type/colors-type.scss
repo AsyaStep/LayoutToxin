@@ -1,6 +1,4 @@
 @import "../../../assets/scss/utils/variables.scss";
-@import "../../../assets/scss/utils/fonts.scss";
-@import "../../../assets/scss/main.scss";
 @import "../../../assets/scss/utils/mixins.scss";
 
 body {
@@ -55,7 +53,7 @@ body {
 }
 
 .purple {
-   background-color: $purple;
+   background-color:$purple;
 }
 
 .green {
@@ -99,7 +97,7 @@ body {
    flex-direction: column;
 
    font-family: 'Montserrat-Regular';
-   color: $dark-shade-25;
+   color:$dark-shade-25;
 
    :first-child {
       margin: 0;
@@ -109,6 +107,7 @@ body {
    :nth-child(2) {
       margin-top: 80px;
       @include fontH2();
+      
    }
 
    :nth-child(3) {
