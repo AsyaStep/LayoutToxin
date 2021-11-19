@@ -1,0 +1,45 @@
+@import '../../assets/scss/utils/variables.scss';
+@import '../../assets/scss/utils/mixins.scss';
+
+.field-text {
+    width: 320px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        font-size: $font-size-h3;
+        margin-bottom: 5px;
+        font-weight: 700;
+        font-family: 'Montserrat-Bold';        
+        text-transform: uppercase;
+    }
+
+    &__input {
+            width: 320px;
+            height: 44px;
+            border: 1px solid $dark-shade-25;
+            border-radius: 4px;        
+
+            padding: 13px;
+            padding-left: 18px;
+            font-size: $font-size;
+            line-height: 18px;
+            font-family: 'Montserrat-Regular';
+            @include placeholder {
+                color: $dark-shade-25;
+            } 
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            border: 1px solid $dark-shade-50;
+            @include placeholder {
+                color: $dark-shade-75;
+            } 
+            outline:0;
+  }
+    }
+
+
+}
