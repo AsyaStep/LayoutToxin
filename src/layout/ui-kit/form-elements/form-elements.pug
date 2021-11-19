@@ -1,0 +1,22 @@
+extends ../../../pug/template
+
+block varibles
+  -let title = 'Ui Kit Forms Element'
+
+block content
+  .logo-page
+  include ../../../blocks/field-text/field-text.pug
+  +field-text([
+    {
+     label: "Text Field",
+     type: "text", 
+     placeholder:"Email"
+    }])
+  +field-text([
+    {    
+     label: "Masked Text Field", 
+     type: "text",      
+     placeholder:"ДД.ММ.ГГГГ", 
+     'data-inputmask': "'alias': 'datetime','inputFormat': 'dd.mm.yyyy'"  
+    }])
+    
