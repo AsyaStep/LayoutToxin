@@ -1,0 +1,22 @@
+- let age = [ 'Взрослые', 'Дети', 'Младенцы']
+
+mixin dropdown-guest
+  .dropdown 
+    label.dropdown__title Dropdown
+    .dropdown__input
+      .dropdown__content Сколько гостей
+      .dropdown__icon <span class="material-icons">expand_more</span>
+    .dropdown__menu
+      each ageCategory in age
+        .dropdown__option 
+          .dropdown__item= ageCategory
+          .dropdown__quantity-guest 
+            .dropdown__button-select <span>-</span> 
+            .dropdown__quantity 0
+            .dropdown__button-select <span>+</span>
+      .dropdown__menu-footer
+        button.dropdown__button Очистить      
+        button.dropdown__button Применить     
+
+
+        
