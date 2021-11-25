@@ -5,7 +5,7 @@ block varibles
 
 block content
   .logo-page
-  include ../../../blocks/field-text/field-text.pug
+  include ../../../blocks/field-text/field-text.pug  
   +field-text([
     {
      label: "Text Field",
@@ -19,4 +19,5 @@ block content
      placeholder:"ДД.ММ.ГГГГ", 
      'data-inputmask': "'alias': 'datetime','inputFormat': 'dd.mm.yyyy'"  
     }])
-    
+  include ../../../blocks/dropdown/dropdown.pug  
+  +dropdown-guest  
