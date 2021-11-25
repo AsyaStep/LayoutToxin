@@ -16,3 +16,19 @@
     url("../assets/fonts/Monserrat/Regular/Montserrat-Regular.woff") format("woff");
 }
 
+//Material Icons
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.eot"); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.svg") format("svg"),
+       url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff2") format('woff2'),
+       url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.woff") format('woff'),
+       url("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+
+
