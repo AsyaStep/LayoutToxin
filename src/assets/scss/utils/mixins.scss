@@ -20,6 +20,14 @@
     line-height: $line-height;
 }
 
+@mixin blockTitle{
+    font-size: $font-size-h3;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'Montserrat-Bold';        
+    text-transform: uppercase;
+}
+
 @mixin placeholder {
     &::-webkit-input-placeholder {@content}
     &:-moz-placeholder           {@content}
