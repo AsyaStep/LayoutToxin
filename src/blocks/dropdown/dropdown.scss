@@ -70,7 +70,7 @@
       align-items: center;
     }
 
-    &__button-select{
+    &__button-decrement, &__button-increment{
       width: 30px;
       height: 30px;
       color: $dark-shade-50; 
