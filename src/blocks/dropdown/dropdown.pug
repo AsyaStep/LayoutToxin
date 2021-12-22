@@ -1,4 +1,9 @@
-- let age = [ 'Взрослые', 'Дети', 'Младенцы']
+-
+  let optionMenu = [
+    {age:'Взрослые',id:'adult'},
+    {age:'Дети',id:'child'},
+    {age:'Младенцы',id:'baby'}
+    ]
 
 mixin dropdown-guest
   .dropdown 
@@ -7,13 +12,13 @@ mixin dropdown-guest
       .dropdown__content Сколько гостей
       .dropdown__icon <span class="material-icons">expand_more</span>
     .dropdown__menu
-      each ageCategory in age
-        .dropdown__option 
-          .dropdown__item= ageCategory
-          .dropdown__quantity-guest 
-            .dropdown__button-decrement <span>-</span> 
+      for option in optionMenu
+        .dropdown__option  
+          .dropdown__item= option.age
+          .dropdown__quantity-guest(data-id=option.id)
+            button.dropdown__decrement <span>-</span> 
             .dropdown__quantity 0
-            .dropdown__button-increment <span>+</span>
+            button.dropdown__increment <span>+</span>
       .dropdown__menu-footer
         button.dropdown__button Очистить      
         button.dropdown__button Применить     
