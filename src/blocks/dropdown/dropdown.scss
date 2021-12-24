@@ -103,7 +103,7 @@
       align-items: center;   
     } 
 
-    &__button{
+    &__btn-clear, &__btn-add{
       outline: none;
       border: 0;
       background: transparent;
@@ -112,5 +112,12 @@
       font-size: $font-size-h3;
       line-height: 15px;
       font-family: 'Montserrat-Bold';      
+    }
+    
+    &__btn-clear{
+      display: none;
+    }
+    &__btn-clear.active{
+      display:block;
     }
   }
