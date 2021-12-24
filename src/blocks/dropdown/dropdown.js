@@ -4,6 +4,8 @@ let menu = document.querySelector(".dropdown__menu");
 let divQuantity = document.querySelectorAll(".dropdown__quantity"); 
 let btnDecrement = document.querySelectorAll(".dropdown__decrement");
 let btnIncrement = document.querySelectorAll(".dropdown__increment");
+let btnClear = document.querySelector(".dropdown__btn-clear");
+let btnAdd = document.querySelector(".dropdown__btn-add");
 
 let minQuantity = 0;
 let maxQuantityAdult = 16;
@@ -15,21 +17,32 @@ let selectionText = {
   man: ['гость', 'гостя', 'гостей'],
   baby: ['младенец', 'младенца', 'младенцев']
 }
+let varnum = 'num';
+let vartext = 'text';
 
-let quantityAdult = () => {
-  let quantityGuest = document.querySelectorAll(".dropdown__quantity-guest");
-  for (const i of quantityGuest){
-    if (i.dataset.id === 'adult'){
-      return Number(i.querySelector(".dropdown__quantity").textContent);      
-    }
+let activeBtnClear = () => {
+  let quantity = document.querySelectorAll(".dropdown__quantity");
+  let sumQuantity = 0;
+  for (const q of quantity){
+    sumQuantity += Number(q.textContent)    
+  };
+  if (sumQuantity != 0) {
+    btnClear.classList.add("active")
+  } else {
+    btnClear.classList.remove("active")
   }
 }
 
-let quantityAdultPlus = () => {
+let quantityAdult = (variant) => {
   let quantityGuest = document.querySelectorAll(".dropdown__quantity-guest");
   for (const i of quantityGuest){
     if (i.dataset.id === 'adult'){
-      return i.querySelector(".dropdown__quantity").textContent = '1';      
+      if (variant === 'num'){
+        return Number(i.querySelector(".dropdown__quantity").textContent); 
+      }
+      if (variant === 'text'){
+        return i.querySelector(".dropdown__quantity").textContent = '1';
+      }           
     }
   }
 }
@@ -75,7 +88,7 @@ let quantityDecrement = (item) => {
     if (count > minQuantity){
       count -= 1;
       quantity.textContent = String(count);
-      let adult = quantityAdult();
+      let adult = quantityAdult(varnum);
       
       if (adult === 0){
         for ( const i of divQuantity){
@@ -93,22 +106,23 @@ let quantityDecrement = (item) => {
         changeInput(totalQuantity,quantityBaby);
       }
             
-    }   
+    }
+    activeBtnClear();   
 };
 
 let quantityIncrement = (item) => {
   let quantity = item.parentElement.querySelector(".dropdown__quantity");
   let idOption = item.parentElement.dataset.id;
-  let count = Number(quantity.textContent)  
+  let count = Number(quantity.textContent);  
 
   let matchCount = (maxQuantity) => {
     if (count < maxQuantity){
       count+= 1;
-      quantity.textContent = String(count)
-      let adult = quantityAdult();
+      quantity.textContent = String(count)      
+      let adult = quantityAdult(varnum);
 
       if (idOption != 'adult' && adult === 0){
-        quantityAdultPlus();
+        quantityAdult(vartext);
         quantity.textContent = String(count);
         if (idOption === 'child'){
           totalQuantity +=2;
@@ -126,7 +140,7 @@ let quantityIncrement = (item) => {
           changeInput(totalQuantity,quantityBaby);
         }
       }      
-    };
+    };    
   }
   switch (idOption){
     case 'adult': 
@@ -139,10 +153,11 @@ let quantityIncrement = (item) => {
       matchCount(maxQuantityBaby);
       break      
   } 
+  activeBtnClear();
 };
 
 input.addEventListener("click",function(){
-  menu.classList.toggle("active");
+  menu.classList.toggle("active");  
 })
 
 for (const item of btnDecrement){
@@ -157,4 +172,18 @@ for (const item of btnIncrement){
   })
 }
 
+btnClear.addEventListener("click",function(){
+  let quantity = document.querySelectorAll(".dropdown__quantity");
+  for (const q of quantity){
+    q.textContent = '0'
+  };
+  totalQuantity = 0;
+  quantityBaby = 0;
+  changeInput(totalQuantity,quantityBaby);
+  btnClear.classList.remove("active")
+})
+
+btnAdd.addEventListener("click",function(){
+  menu.classList.toggle("active");
+})
 
