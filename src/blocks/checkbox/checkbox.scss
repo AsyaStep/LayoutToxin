@@ -1,0 +1,40 @@
+@import '../../assets/scss/utils/variables.scss';
+
+.option{
+    display: block;
+    margin-bottom: 0.625rem;
+    width: 13rem;
+}
+
+.check{      
+  padding-left: 1.875rem;
+  color: $dark-shade-100;
+  font-size: $font-size;
+  font-family: 'Montserrat-Regular';  
+  
+  &__input{
+      appearance: none;
+      position:absolute;
+  }
+
+  &__box{
+    position:absolute;
+    margin-left: -1.875rem;
+    width: 1.188rem;
+    height: 1.188rem;
+    border-radius: 0.25rem;
+    background-color: $white;
+    box-shadow: 0 0 0 0.063rem $dark-shade-25;
+  }
+
+  /*Checked*/
+
+  &__input:checked + &__box{
+    box-shadow: 0 0 0 0.063rem $purple;
+    background-image: url(../../assets/img/vector.svg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+}

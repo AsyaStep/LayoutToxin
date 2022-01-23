@@ -1,0 +1,12 @@
+mixin checkbox(title, isChecked)
+  if isChecked === true
+    label.check.option
+      input.check__input(type="checkbox" checked)
+      span.check__box
+      = title
+  else 
+    label.check.option
+      input.check__input(type="checkbox" )
+      span.check__box
+      = title  
+    
