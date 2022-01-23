@@ -1,0 +1,57 @@
+@import '../../assets/scss/utils/variables.scss';
+@import '../../assets/scss/utils/mixins.scss';
+
+.toggle {
+    width: 16.25rem;
+    height: 1.5rem;
+    @include flexSpaceBetween();
+    align-items: center;
+
+    cursor: pointer;
+    user-select: none;
+
+    &__title{
+      font-size: $font-size;
+      line-height: $line-height;
+      font-family: 'Montserrat-Regular'; 
+      color: $dark-shade-75;
+    }
+
+    input{
+        appearance: none;
+        margin: 0;
+        padding-left: 0.25rem;
+        width: 2.5rem;
+        height: 1.25rem;        
+
+        display: grid;
+        align-items: center;
+        grid: [track] 1fr / [track] 1fr;
+
+        border: 1px solid $dark-shade-25;
+        box-sizing: content-box;
+
+        background: $white;
+        border-radius: 0.8rem;
+
+        &::before {
+            content: "";
+            grid-area: track;
+            width: 0.75rem;
+            height: 0.75rem;
+            
+            background: $dark-shade-25;
+            border-radius: 50%;
+            transform: translateX(0%);            
+    }
+
+        &:checked {
+            background: $white;
+            border: 1px solid $purple;
+            &::before{
+              transform: translateX(calc(2.25rem - 100%));
+              background: $gradient-btn;
+            }
+        }  
+  }
+}
