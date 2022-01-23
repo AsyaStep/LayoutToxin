@@ -19,5 +19,16 @@ block content
      placeholder:"ДД.ММ.ГГГГ", 
      'data-inputmask': "'alias': 'datetime','inputFormat': 'dd.mm.yyyy'"  
     }])
-  include ../../../blocks/dropdown/dropdown.pug  
-  +dropdown-guest
+  include ../../../blocks/dropdown/dropdown.pug
+  +dropdown-guest   
+  include ../../../blocks/button/button.pug
+  +btn({title: "Click me"}) 
+  +btn({title: "Click me", isGhost: true})
+  +btn({title: "Перейти к оплате", isArrow: true})
+  +btn({title: "Click me", isLink: true})
+  include ../../../blocks/toggle/toggle.pug
+  +toggle('Получать спецпредложения')
+  include ../../../blocks/checkbox/checkbox.pug
+  +checkbox('Можно курить', false)
+  +checkbox('Можно с питомцами', true)
+  +checkbox('Можно пригласить гостей (до 10 человек)', true)
