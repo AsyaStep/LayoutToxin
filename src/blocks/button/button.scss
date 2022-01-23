@@ -1,0 +1,82 @@
+@import "../../assets/scss/utils/variables.scss";
+@import "../../assets/scss/utils/mixins.scss";
+
+.btn {
+  width: 99px;
+  height: 44px;
+  padding: 0px;
+  @include flexCenter();
+  border: none;
+  border-radius: 22px;
+  background: transparent;
+
+  color: $purple;
+  font-family: "Montserrat-Bold";
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  &_arrow {
+    width: 320px;
+  }
+
+  &_link {
+    width: 61px;
+    height: 15px;
+    border-radius: 0;
+    background: none;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .btn__text {
+          color: $dark-shade-50;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    background: $gradient-btn;
+    padding: 0.2rem;
+    border-radius: 2.2rem;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    background: $white;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .btn__wrapper {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__contentArrow {
+    position: absolute;
+    width: inherit;
+    @include flexEnd();
+  }
+
+  &__text {
+    position: absolute;
+
+    &_white {
+      color: $white;
+    }
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    color: $white;
+    line-height: 24px;
+    @include flexCenter();
+  }
+}
