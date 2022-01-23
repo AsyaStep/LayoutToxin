@@ -1,0 +1,23 @@
+mixin btn(options)
+  -
+    let btnClassName = ""
+    let textColor = ""
+    btnClassName += options.isLink ? " btn_link" : ""
+    btnClassName += options.isArrow ? " btn_arrow" : ""
+    textColor += options.isGhost || options.isLink ? "" : " btn__text_white"
+  button.btn(class=btnClassName)
+    if options.isLink !== true  
+      .btn__wrapper
+        if options.isGhost===true
+          .btn__background
+    .btn__text(class=textColor)= options.title
+    .btn__contentArrow
+      if options.isArrow === true
+        .btn__icon.material-icons arrow_forward
+          
+  
+
+  
+  
+  
+
