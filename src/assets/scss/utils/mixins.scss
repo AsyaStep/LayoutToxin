@@ -32,5 +32,22 @@
     &::-webkit-input-placeholder {@content}
     &:-moz-placeholder           {@content}
     &::-moz-placeholder          {@content}
-    &:-ms-input-placeholder      {@content}  
-  }
+    &:-ms-input-placeholder      {@content} 
+}
+
+@mixin flexSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+
+@mixin flexEnd {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
